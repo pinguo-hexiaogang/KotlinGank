@@ -9,8 +9,10 @@ import java.util.concurrent.TimeUnit
 
 
 object RetrofitManager {
-    var mRetrofit: Retrofit
-    var mApiService: ApiService
+    private var mRetrofit: Retrofit
+
+    val mApiService: ApiService
+    public get() = field
 
     val BASE_URL = "http://52.14.164.47/"
     //val BASE_URL = "http://10.1.5.221:8001/"
@@ -31,8 +33,4 @@ object RetrofitManager {
         mApiService = this.mRetrofit.create(ApiService::class.java)
     }
 
-
-    fun getService(): ApiService {
-        return mApiService;
-    }
 }
