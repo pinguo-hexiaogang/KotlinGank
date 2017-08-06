@@ -20,10 +20,14 @@ class ApplicationModule constructor(val context: Context) {
         return context
     }
 
+    @Provides
+    @Singleton
     fun provideResource(): Resources {
         return context.resources
     }
 
+    @Provides
+    @Singleton
     fun provideApiService():ApiService{
         return RetrofitManager.mApiService
     }
